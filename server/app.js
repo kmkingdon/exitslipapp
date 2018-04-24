@@ -62,10 +62,11 @@ app.post("/verify", (request, response, next) => {
     verify().catch(console.error);
 });
 
-
-app.get("/", (request, response) => {
+app.get("/test", (request, response) => {
     console.log('Session does not exhist')
     console.log(request.session)
+
+    response.send("test")
     if (request.session && request.session.user) {
         console.log("Session exhists!!!")
         console.log(request.session.user)
